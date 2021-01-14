@@ -1,5 +1,8 @@
 <script>
-  import { grayscale } from '@Services'
+  import {
+    grayscale,
+    sepia,
+  } from '@Services'
 
   let selected = 0
   let canvas
@@ -43,6 +46,9 @@
       case 1:
         putImageData(grayscale(imageData))
         break
+      case 2:
+        putImageData(sepia(imageData))
+        break
       case 0:
       default:
         putImageData(imageData)
@@ -83,6 +89,7 @@
   >
     <option value="0">Choose a filter</option>
     <option value="1">Grayscale</option>
+    <option value="2">Sepia</option>
   </select>
 </div>
 
