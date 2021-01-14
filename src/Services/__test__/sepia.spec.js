@@ -8,7 +8,7 @@ describe('sepia', () => {
     expect(input).toEqual(Uint8ClampedArray.from('13248974'))
   })
 
-  it('should average the rgb value per pixel in the output', () => {
+  it('should apply the sepia algorhithm in the output', () => {
     expect(output).toEqual(Uint8ClampedArray.from([3, 3, 2, 4, 11, 10, 8, 4]))
   })
 })

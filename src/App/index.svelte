@@ -2,6 +2,7 @@
   import {
     grayscale,
     sepia,
+    reflect,
   } from '@Services'
 
   let selected = 0
@@ -49,6 +50,9 @@
       case 2:
         putImageData(sepia(imageData))
         break
+      case 3:
+        putImageData(reflect(imageData, width))
+        break
       case 0:
       default:
         putImageData(imageData)
@@ -90,6 +94,7 @@
     <option value="0">Choose a filter</option>
     <option value="1">Grayscale</option>
     <option value="2">Sepia</option>
+    <option value="3">Reflect</option>
   </select>
 </div>
 
