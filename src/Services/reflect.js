@@ -18,8 +18,10 @@ export default (input, width) => {
       const offset = j * width * 4
       // iterate r,g,b,a
       for (let k = 0; k < 4; k++) {
-        output[offset + i * 4 + k] = input[offset + reflected * 4 + k]
-        output[offset + reflected * 4 + k] = input[offset + i * 4 + k]
+        const left = offset + i * 4 + k
+        const right = offset + reflected * 4 + k
+        output[left] = input[right]
+        output[right] = input[left]
       }
     }
   }
