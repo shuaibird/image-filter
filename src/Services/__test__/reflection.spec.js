@@ -1,6 +1,6 @@
 import { reflection } from '..'
 
-describe('reflect', () => {
+describe('reflection', () => {
   const input = Uint8ClampedArray.from('111122223333222211114444')
   const output = reflection(input, 3)
 
