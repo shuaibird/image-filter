@@ -3,16 +3,17 @@
     grayscale,
     sepia,
     reflect,
+    blur,
   } from '@Services'
 
-  let selected = 0
+  let selected = '0'
   let canvas
   let width
   let height
   let imageData
 
   function handleFileChange({ target: { files: [file] } }) {
-    selected = 0
+    selected = '0'
     const url = URL.createObjectURL(file)
     const image = new Image()
     image.onload = ({ target }) => {
@@ -41,7 +42,7 @@
   }
 
   function handleSelectChange({ target: { value } }) {
-    value=+value
+    value= +value
     selected = value
     switch (value) {
       case 1:
@@ -52,6 +53,9 @@
         break
       case 3:
         putImageData(reflect(imageData, width))
+        break
+      case 4:
+        putImageData(blur(imageData, width))
         break
       case 0:
       default:
@@ -95,6 +99,7 @@
     <option value="1">Grayscale</option>
     <option value="2">Sepia</option>
     <option value="3">Reflect</option>
+    <option value="4">Blur</option>
   </select>
 </div>
 
