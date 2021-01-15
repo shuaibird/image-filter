@@ -14,6 +14,9 @@
   let imageData
 
   function handleFileChange({ target: { files: [file] } }) {
+    if (!file) {
+      return
+    }
     selected = '0'
     const url = URL.createObjectURL(file)
     const image = new Image()
