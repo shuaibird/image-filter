@@ -2,7 +2,7 @@
  * Reflect image filter
  *
  * @param   {Uint8ClampedArray}  input
- * @param   {number}  width
+ * @param   {number}  width / in pixels
  *
  * @return  {Uint8ClampedArray}
  */
