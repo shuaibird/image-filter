@@ -2,10 +2,11 @@
 
 A demo of image processing using Canvas API
 
-https://canvas-filter.netlify.app/
+https://pixels-manipulation.netlify.app/
 
 
 - Grayscale
 - Sepia
 - Reflection
 - Blur
+- Sobel (edge detection)
