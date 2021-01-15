@@ -2,7 +2,7 @@
   import {
     grayscale,
     sepia,
-    reflect,
+    reflection,
     blur,
   } from '@Services'
 
@@ -52,7 +52,7 @@
         putImageData(sepia(imageData))
         break
       case 3:
-        putImageData(reflect(imageData, width))
+        putImageData(reflection(imageData, width))
         break
       case 4:
         putImageData(blur(imageData, width))
@@ -98,7 +98,7 @@
     <option value="0">Choose a filter</option>
     <option value="1">Grayscale</option>
     <option value="2">Sepia</option>
-    <option value="3">Reflect</option>
+    <option value="3">Reflection</option>
     <option value="4">Blur</option>
   </select>
 </div>
