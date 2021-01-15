@@ -4,6 +4,7 @@
     sepia,
     reflection,
     blur,
+    sobel,
   } from '@Services'
 
   let selected = '0'
@@ -57,6 +58,9 @@
       case 4:
         putImageData(blur(imageData, width))
         break
+      case 5:
+        putImageData(sobel(grayscale(imageData), width))
+        break
       case 0:
       default:
         putImageData(imageData)
@@ -100,6 +104,7 @@
     <option value="2">Sepia</option>
     <option value="3">Reflection</option>
     <option value="4">Blur</option>
+    <option value="5">Sobel</option>
   </select>
 </div>
 
