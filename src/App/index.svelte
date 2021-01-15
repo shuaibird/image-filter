@@ -72,43 +72,64 @@
 </script>
 
 <style>
-  .file-input {
-    margin-bottom: 16px;
+  h1 {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .file-uploader,
+  .filter-selector {
+    flex: 1;
+    text-align: center;
   }
   .canvas {
-    display: block;
-    margin-top: 16px;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 
-<div class=file-input>
-  <label class="file">
-    <input
-      type="file"
-      id="file"
-      aria-label="File"
-      accept="image/*"
-      on:change={handleFileChange}
-    >
-    <span class="file-custom"></span>
-  </label>
+<h1>Image Processing Demo</h1>
+<div class="controller">
+  <div class="file-uploader">
+    <div class=file-input>
+      <label class="file">
+        <input
+          type="file"
+          id="file"
+          aria-label="File"
+          accept="image/*"
+          on:change={handleFileChange}
+        >
+        <span class="file-custom"></span>
+      </label>
+    </div>
+  </div>
+  <div class="filter-selector">
+    <div class="select">
+      <!-- svelte-ignore a11y-no-onchange -->
+      <select
+        aria-label="Select image filter"
+        on:change={handleSelectChange}
+        value={selected}
+        disabled={!imageData}
+      >
+        <option value="0">Choose a filter</option>
+        <option value="1">Grayscale</option>
+        <option value="2">Sepia</option>
+        <option value="3">Reflection</option>
+        <option value="4">Blur</option>
+        <option value="5">Sobel</option>
+      </select>
+    </div>
+  </div>
 </div>
 
-<div class="select">
-  <!-- svelte-ignore a11y-no-onchange -->
-  <select
-    aria-label="Select image filter"
-    on:change={handleSelectChange}
-    value={selected}
-    disabled={!imageData}
-  >
-    <option value="0">Choose a filter</option>
-    <option value="1">Grayscale</option>
-    <option value="2">Sepia</option>
-    <option value="3">Reflection</option>
-    <option value="4">Blur</option>
-    <option value="5">Sobel</option>
-  </select>
+<div class="canvas">
+  <canvas bind:this={canvas} />
 </div>
-
-<canvas class="canvas" bind:this={canvas} />
